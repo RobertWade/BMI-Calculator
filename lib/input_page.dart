@@ -31,11 +31,16 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(
-                    color: Color(0xFF1D1E33),
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      label: 'MALE',
+                  child: GestureDetector(
+                    onTap: (){
+                      print('TEST');
+                    },
+                    child: ReusableCard(
+                      color: Color(0xFF1D1E33),
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.venus,
+                        label: 'MALE',
+                      ),
                     ),
                   ),
                 ),
@@ -68,4 +73,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
