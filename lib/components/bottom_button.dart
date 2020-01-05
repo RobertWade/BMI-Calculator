@@ -14,7 +14,6 @@ class BottomButton extends StatelessWidget {
       child: Container(
         height: kBottomContainerHeight,
         color: kPrimaryColor,
-        padding: EdgeInsets.only(bottom: 20.0),
         child: Center(
           child: Text(
             buttonTitle,

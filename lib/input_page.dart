@@ -96,7 +96,7 @@ class _InputPageState extends State<InputPage> {
                             thumbShape:
                                 RoundSliderThumbShape(enabledThumbRadius: 15),
                             overlayShape:
-                                RoundSliderOverlayShape(overlayRadius: 30),
+                                RoundSliderOverlayShape(overlayRadius: 20),
                             overlayColor: kShadePrimaryColor,
                             thumbColor: kPrimaryColor,
                             activeTrackColor: Colors.white,
@@ -246,8 +246,8 @@ class RoundIconButton extends StatelessWidget {
       shape: CircleBorder(),
       fillColor: Color(0xFF4C4F5E),
       constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
+        width: 45.0,
+        height: 45.0,
       ),
       elevation: 6.0,
       onPressed: tapFunction,
