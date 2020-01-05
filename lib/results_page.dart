@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
-import 'reusable_card.dart';
+import 'package:bmi_calculator/components/constants.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
+  ResultsPage(
+      {@required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretation});
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,11 +23,12 @@ class ResultsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-            child: Column(
-              children: <Widget>[
-                Text('YOUR RESULT', style: kHeadlineTextStyle)
-              ],
-            ),
+            child: Container(
+                padding: EdgeInsets.all(15.0),
+                child: Text(
+                  'YOUR RESULT',
+                  style: kHeadlineTextStyle,
+                )),
           ),
           Expanded(
             flex: 5,
@@ -28,29 +38,19 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text('Normal', style: kResultTextStyle),
-                  Text('18.3', style: kBmiTextStyle),
-                  Text('Your BMI Result is quite low. You should eat more!',
+                  Text(resultText, style: kResultTextStyle),
+                  Text(bmiResult, style: kBmiTextStyle),
+                  Text(interpretation,
                       textAlign: TextAlign.center, style: kbodyTextStyle)
                 ],
               ),
             ),
           ),
-          GestureDetector(
+          BottomButton(
+            buttonTitle: 'RE-CALCULATE',
             onTap: () {
-              Navigator.pushNamed(context, '/results');
+              Navigator.pushNamed(context, '/');
             },
-            child: Container(
-              height: kBottomContainerHeight,
-              color: kPrimaryColor,
-              padding: EdgeInsets.only(bottom: 20.0),
-              child: Center(
-                child: Text(
-                  'CALCULATE',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
           )
         ],
       ),
